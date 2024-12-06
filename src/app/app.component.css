@@ -1,0 +1,27 @@
+/* sidebar.component.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+  }
+  
+  .content {
+    margin-left: 250px; /* Adjust the content to the right of the sidebar */
+  }
+  
+  .nav-link {
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    background-color: #444;
+  }
+  
+  /* Add styles for when the submenu is open */
+  .nav.flex-column.ms-3 {
+    margin-top: 10px;
+  }
+
+ 

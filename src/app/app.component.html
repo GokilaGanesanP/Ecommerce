@@ -1,0 +1,48 @@
+
+
+<div class="d-flex">
+
+  <div class="sidebar bg-dark text-white p-3" style="width: 250px; height: 100vh;">
+   
+    <ul class="nav flex-column">
+ 
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Dashboard</a>
+      </li>
+
+    
+      <li class="nav-item">
+        <a class="nav-link text-white" (click)="toggleSubMenu()">
+          <i class="bi bi-caret-down-fill"></i> Categories
+        </a>
+
+        
+        <ul class="nav flex-column ms-3" *ngIf="isSubMenuOpen" >
+          <li class="nav-item" *ngFor="let categories of categoryList">
+            <a class="nav-link text-white" (click)="getProducts($event)" id="{{ categories}}">{{ categories | titlecase  }}</a>
+          </li>
+        
+        </ul>
+      </li>
+
+    
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Settings</a>
+      </li>
+    </ul>
+  </div>
+
+ 
+  <div class="content flex-fill p-3">
+    <router-outlet> </router-outlet>
+
+    
+
+  </div>
+
+
+</div>
+
+
+
+

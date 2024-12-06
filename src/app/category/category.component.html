@@ -1,0 +1,29 @@
+<div class="content flex-fill p-3">
+    <div class="row">
+        <div class="col-4" *ngFor="let products of productList">
+          <div class="card" style="width: 18rem;height: 25rem;overflow: auto;margin-top: 5%;" >
+            <img src="{{ products.image }}" class="card-img-top imagecss" id="{{products.id}}" (click)="getProductInfo($event)">
+            <div class="card-body">
+              <h5 class="card-title">{{  products.title }} </h5>
+              <b style="color:red;"><i class="fa fa-inr" aria-hidden="true"></i>{{ products.price }} </b>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- Description Modal -->
+
+<div class="modal" [ngClass]="{'show': isVisible}" tabindex="-1" role="dialog" *ngIf="isVisible" (click)="closeModal()">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        {{productInfo.description}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
